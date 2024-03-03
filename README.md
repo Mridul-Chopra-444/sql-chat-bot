@@ -1,3 +1,5 @@
+Dependencies : python3, sqlite3
+
 How to run ? 
 
 Run the notebook first. 
