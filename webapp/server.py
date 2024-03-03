@@ -10,7 +10,7 @@ from langchain_community.utilities.sql_database import SQLDatabase
 from langchain_openai.chat_models import ChatOpenAI
 
 #environment setup
-os.environ['OPENAI_API_KEY'] = "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"
+os.environ['OPENAI_API_KEY'] = "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"  ## thiw is wrong key : use a new one
 
 # database connections setup and llm setup
 db = SQLDatabase.from_uri("sqlite:///./Chinook.db")
