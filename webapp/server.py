@@ -27,10 +27,17 @@ def index():
 
 @app.route('/api/db-chatbot', methods=['POST'])
 def db_chatbot_rest():
-    data = request.json
-    prompt = data['prompt']
-    result = agent_executor.invoke(prompt)
-    return {'result': result['output']}
+    try:
+        data = request.json
+        prompt = data['prompt']
+        result = agent_executor.invoke(prompt)
+        return {'result': result['output']}
+    except KeyError as e:
+        # Handle KeyError (e.g., if 'prompt' key is missing in the request JSON)
+        return {'result': 'KeyError: {}'.format(e)}
+    except Exception as e:
+        # Handle other exceptions
+        return {'result': 'An error occurred: {}'.format(e)}
 
 # Run the Flask application
 if __name__ == '__main__':

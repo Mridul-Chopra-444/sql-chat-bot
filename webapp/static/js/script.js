@@ -11,7 +11,7 @@ function createMessageBox(type, message) {
     var container = document.createElement("div");
     container.className = type == "user" ? "container darker" : type == "bot" ? "container" : "";
     var img = document.createElement("img");
-    img.src = type == "user" ? "static/images/user-logo.jpg" : type == "bot" ? "static/images/nable-logo.jpg" : "";
+    img.src = type == "user" ? "static/images/user-logo.jpg" : type == "bot" ? "static/images/bot-logo.jpg" : "";
     img.alt = "Avatar";
     img.className = type == "user" ? "right" : type == "bot" ? "left" : "";
     img.style.width = "100%";
